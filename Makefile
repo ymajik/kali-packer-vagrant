@@ -19,6 +19,9 @@ start:
 stop:
 	@vagrant halt
 
+validate: convert
+	@packer inspect templates/kali.json
+
 clean: deps
 	@vagrant destroy -f
 
