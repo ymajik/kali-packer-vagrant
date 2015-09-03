@@ -1,0 +1,3 @@
+# Packer json templates are derived from YAML
+templates/*.json
+
