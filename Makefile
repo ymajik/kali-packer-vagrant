@@ -1,4 +1,4 @@
-.PHONY: deps convert start stop clean image
+.PHONY: deps convert start stop clean image validate
 .DEFAULT_GOAL := start
 
 TEMPLATE_FILE := templates/kali.json
