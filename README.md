@@ -22,6 +22,16 @@ Other dependencies and tools may exist, so please do not rely on this
 list as an exhaustive resource.  The [Makefile](Makefile) will alert
 you to any missing dependencies.
 
+### First Time Here?
+
+When you create a VM image for the first time, Packer will need to
+download the Kali ISO file (approx. 3GB).  Depending on your Internet connection
+speed, this can take up to an hour.  Once this is finished, a
+``packer_cache`` directory exists in this project that holds the
+downloaded ISO file.  If you do not delete this directory (or the file)
+Packer will not have to redownload it and the imaging process will
+be faster.
+
 ## Contributing
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the repository.
