@@ -15,6 +15,8 @@ so you know exactly what you are getting.
 Run ``make deps`` to find out what tools you need.  At a minimum, you will
 need the following:
 
+* OSX 10.10.4: This is the version the project was tested on
+* VirtualBox: This is the VM software the project was tested on
 * [Vagrant](https://docs.vagrantup.com/v2/installation/)
 * [Packer](https://www.packer.io/intro/getting-started/setup.html)
 
