@@ -15,12 +15,12 @@ so you know exactly what you are getting.
 Run ``make deps`` to find out what tools you need.  At a minimum, you will
 need the following:
 
-* Vagrant
-* Packer
-* Kali Linux ISO
+* [Vagrant](https://docs.vagrantup.com/v2/installation/)
+* [Packer](https://www.packer.io/intro/getting-started/setup.html)
 
 Other dependencies and tools may exist, so please do not rely on this
-list as an exhaustive resource.
+list as an exhaustive resource.  The [Makefile](Makefile) will alert
+you to any missing dependencies.
 
 ## Contributing
 
