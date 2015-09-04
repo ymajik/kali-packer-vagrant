@@ -1,0 +1,49 @@
+---
+variables:
+  iso_file: "http://cdimage.kali.org/kali-2.0/kali-linux-2.0-amd64.iso"
+  iso_checksum: "aaeb89a78f155377282f81a785aa1b38ee5f8ba0"
+
+#provisioners:
+
+builders:
+  - type: virtualbox-iso
+    guest_os_type: "Ubuntu_64"
+    iso_url: "{{ user `iso_file` }}"
+    iso_checksum: "{{ user `iso_checksum` }}"
+    iso_checksum_type: "sha1"
+    http_directory: "http"
+    ssh_username: "root"
+    ssh_password: "toor"
+    headless: false
+    shutdown_command: ""
+    boot_command:
+      - "<down><down><down><down><down><enter>" # select text install
+      - "<wait10>"    # wait for mount errors to finish
+      - "<enter><wait5>"
+      - "<enter><wait5>"
+      - "<enter><wait10><wait10><wait10><wait10>"
+      - "<down><enter><wait5>"
+      - "<down><enter><wait5>"
+      - "toor<down><enter><wait5>"   # set root password
+      - "toor<down><enter><wait5>"   # verify root password
+      - "<enter><wait10>" # timezone selection
+      - "<enter><wait5>"  # partitions
+      - "<enter><wait5>"
+      - "<enter><wait5>"
+      - "<enter><wait5>"
+      - "<left><wait><enter>"   # confirm partition structure
+      - "<wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10>"      # installing the system 4m51s
+      - "<enter><wait5>" # use network mirror
+      - "<down><enter>" # proxy info
+      - "<wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10><wait10>"  # loading apt mirror
+      - "<enter><wait5>"
+      - "<down><enter><wait5>"   # grub device
+      - "<wait10><wait10>"
+      - "<enter>"   # finish install
+      - "<wait10>"  # removing install packages
+
+"post-processors":
+  - type: "vagrant"
+    output: "builds/{{ .Provider }}/kali-2.0-64bit.box"
+    keep_input_artifact: true
+
