@@ -22,6 +22,13 @@ need the following:
 Other dependencies and tools may exist, so please do not rely on this
 list as an exhaustive resource.
 
+## Contributing
+
+1. [Fork](https://help.github.com/articles/fork-a-repo/) the repository.
+1. Make changes in a branch.
+1. Submit a [Pull Request](https://help.github.com/articles/using-pull-requests/).
+1. Do a dance because you've contributed to open source.
+
 ## License
 
 This project is open source.
