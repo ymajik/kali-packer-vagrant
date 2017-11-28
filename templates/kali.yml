@@ -1,7 +1,7 @@
 ---
 variables:
-  iso_file: "http://cdimage.kali.org/kali-2.0/kali-linux-2.0-amd64.iso"
-  iso_checksum: "aaeb89a78f155377282f81a785aa1b38ee5f8ba0"
+  iso_file: "https://cdimage.kali.org/kali-2017.3/kali-linux-light-2017.3-amd64.iso"
+  iso_checksum: "9822a4416d9a872b8455e829b6dcc23569b2739f838d19f5a00a623c50a6d185"
 
 #provisioners:
 
@@ -10,7 +10,7 @@ builders:
     guest_os_type: "Ubuntu_64"
     iso_url: "{{ user `iso_file` }}"
     iso_checksum: "{{ user `iso_checksum` }}"
-    iso_checksum_type: "sha1"
+    iso_checksum_type: "sha256"
     http_directory: "http"
     ssh_username: "root"
     ssh_password: "toor"
@@ -44,6 +44,5 @@ builders:
 
 "post-processors":
   - type: "vagrant"
-    output: "builds/{{ .Provider }}/kali-2.0-64bit.box"
+    output: "builds/{{ .Provider }}/kali-light-2017.3-64bit.box"
     keep_input_artifact: true
-
